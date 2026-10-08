@@ -1,0 +1,44 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-ticon-base: #001c36;
+  --color-ticon-baselight: #002b52;
+  --color-ticon-green: #75c043;
+  --color-ticon-darkgreen: #006b5f;
+  --color-ticon-lightblue: #00aeef;
+  --color-ticon-gray: #e5e7eb;
+
+  --color-hero-from: #e0f2fe;
+  --color-hero-to: #ffffff;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+site-nav,
+site-footer {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, .font-display {
+  font-family: var(--font-display);
+}
+
+.leaf-shape {
+  border-radius: 0 50% 0 50%;
+}
+
+.text-gradient-green {
+  background: linear-gradient(to right, #006b5f, #75c043);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-hero-pattern {
+  background-image: linear-gradient(to bottom right, #e0f2fe, #ffffff);
+}

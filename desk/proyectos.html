@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos — XI Feria TIC-ON</title>
+    <meta name="description" content="Proyectos de innovación que se expondrán en la XI Feria TIC-ON del SENA.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body data-page="proyectos" class="bg-white text-gray-800 antialiased overflow-x-hidden">
+    <site-nav></site-nav>
+
+    <main>
+        <!-- Cabecera de página -->
+        <header class="relative bg-ticon-base text-white py-16 overflow-hidden">
+            <div class="absolute top-6 right-[5%] w-40 h-40 bg-ticon-green opacity-20 leaf-shape transform rotate-45 z-0"></div>
+            <div class="absolute bottom-6 left-[5%] w-24 h-24 bg-ticon-lightblue opacity-20 leaf-shape transform -rotate-12 z-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <p class="text-ticon-green font-semibold uppercase tracking-widest text-sm mb-2">Proyectos</p>
+                <h1 class="text-4xl lg:text-5xl font-black font-display uppercase italic">Ideas que florecen</h1>
+                <p class="text-gray-300 mt-3 max-w-2xl">Los proyectos que los aprendices del SENA mostrarán en la feria: robótica, agro, software y energía.</p>
+            </div>
+        </header>
+
+        <!-- Filtros -->
+        <section class="py-10 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap gap-3" id="filtros">
+                    <button data-filter="todos" class="bg-ticon-darkgreen text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">Todos</button>
+                    <button data-filter="robótica" class="bg-ticon-base text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">Robótica</button>
+                    <button data-filter="agro" class="bg-ticon-base text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">Agro y medioambiente</button>
+                    <button data-filter="software" class="bg-ticon-base text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">Software</button>
+                    <button data-filter="energía" class="bg-ticon-base text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">Energía</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grid de proyectos -->
+        <section class="pb-16 -mt-4 bg-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <article data-categoria="robótica" class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="h-40 bg-gradient-to-br from-ticon-lightblue to-blue-300 flex items-center justify-center">
+                        <i class="ph-fill ph-robot text-6xl text-white"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-wide text-ticon-lightblue">Robótica</span>
+                        <h3 class="text-lg font-bold text-ticon-base mt-1">AGROBOT: cosecha autónoma</h3>
+                        <p class="text-sm text-gray-500 mt-2">Robot asistente para cultivos de alto valor con visión artificial y navegación autónoma.</p>
+                    </div>
+                </article>
+
+                <article data-categoria="agro" class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="h-40 bg-gradient-to-br from-ticon-green to-ticon-darkgreen flex items-center justify-center">
+                        <i class="ph-fill ph-drone text-6xl text-white"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-wide text-ticon-darkgreen">Agro y medioambiente</span>
+                        <h3 class="text-lg font-bold text-ticon-base mt-1">DRON MONITOR</h3>
+                        <p class="text-sm text-gray-500 mt-2">Vuelos de precisión con sensores multiespectrales para detectar estrés hídrico y plagas.</p>
+                    </div>
+                </article>
+
+                <article data-categoria="software" class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="h-40 bg-gradient-to-br from-ticon-darkgreen to-ticon-base flex items-center justify-center">
+                        <i class="ph-fill ph-code text-6xl text-white"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-wide text-ticon-darkgreen">Software</span>
+                        <h3 class="text-lg font-bold text-ticon-base mt-1">AgroPulse</h3>
+                        <p class="text-sm text-gray-500 mt-2">Plataforma web que centraliza datos de clima, suelo y mercado para pequeños productores.</p>
+                    </div>
+                </article>
+
+                <article data-categoria="energía" class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="h-40 bg-gradient-to-br from-yellow-400 to-ticon-green flex items-center justify-center">
+                        <i class="ph-fill ph-solar-panel text-6xl text-white"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-wide text-yellow-600">Energía</span>
+                        <h3 class="text-lg font-bold text-ticon-base mt-1">SolCampo</h3>
+                        <p class="text-sm text-gray-500 mt-2">Sistema solar portátil de bajo costo para riego eficiente en zonas sin red eléctrica.</p>
+                    </div>
+                </article>
+
+                <article data-categoria="robótica" class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="h-40 bg-gradient-to-br from-ticon-base to-ticon-lightblue flex items-center justify-center">
+                        <i class="ph-fill ph-microchip text-6xl text-white"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-wide text-ticon-lightblue">Robótica</span>
+                        <h3 class="text-lg font-bold text-ticon-base mt-1">Módulo IoT de invernadero</h3>
+                        <p class="text-sm text-gray-500 mt-2">Sensores conectados que regulan riego, ventilación y temperatura de forma automática.</p>
+                    </div>
+                </article>
+
+                <article data-categoria="agro" class="rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:shadow-xl transition">
+                    <div class="h-40 bg-gradient-to-br from-ticon-lightblue to-ticon-darkgreen flex items-center justify-center">
+                        <i class="ph-fill ph-recycle text-6xl text-white"></i>
+                    </div>
+                    <div class="p-5">
+                        <span class="text-xs font-bold uppercase tracking-wide text-ticon-darkgreen">Agro y medioambiente</span>
+                        <h3 class="text-lg font-bold text-ticon-base mt-1">Composta 4.0</h3>
+                        <p class="text-sm text-gray-500 mt-2">Biorreactor monitoreado que acelera el compostaje y reduce residuos orgánicos del campus.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        const botones = document.querySelectorAll('#filtros button')
+        botones.forEach((boton) => {
+            boton.addEventListener('click', () => {
+                botones.forEach((b) => {
+                    b.className = b.hasAttribute('data-filter')
+                        ? 'bg-ticon-base text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90'
+                        : b.className
+                })
+                if (boton.dataset.filter === 'todos') {
+                    boton.className = 'bg-ticon-darkgreen text-white px-5 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90'
+                }
+                const filtro = boton.dataset.filter
+                document.querySelectorAll('[data-categoria]').forEach((card) => {
+                    card.classList.toggle('hidden', filtro !== 'todos' && card.dataset.categoria !== filtro)
+                })
+            })
+        })
+    </script>
+</body>
+</html>

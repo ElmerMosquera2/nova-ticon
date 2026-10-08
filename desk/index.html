@@ -1,286 +1,258 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>XI Feria TIC-Ton · Sembrando semillas de innovación</title>
-<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
-<style>
-:root{--lima:#CDD852;--cielo:#52C3F1;--verde:#35763A;--blanco:#fff;--negro:#000;--crema:#F8F8E8;--noche:#0B2A4A;--tinta:#10331a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-*,*::before,*::after{box-sizing:inherit}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{margin:0;background:var(--crema);color:var(--tinta);font-family:"Work Sans",system-ui,sans-serif;line-height:1.55}
-h1,h2,h3{font-family:"Black Future","Work Sans",system-ui,sans-serif;line-height:1.1;margin:0}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--cielo);outline-offset:3px}
-.wrap{max-width:1180px;margin:auto;padding:0 20px}
-section{padding:72px 0}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;border:2px solid var(--verde);font:600 15px "Work Sans",sans-serif;text-decoration:none;cursor:pointer;background:var(--verde);color:#fff}
-.btn.ghost{background:transparent;color:var(--verde)}
-.btn.lima{background:var(--lima);border-color:var(--lima);color:var(--negro)}
-header{position:sticky;top:0;z-index:20;background:rgba(248,248,232,.95);backdrop-filter:blur(8px);border-bottom:1px solid #0001}
-.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
-.brand{font:800 26px "Work Sans";text-decoration:none;color:var(--verde);line-height:.9}
-.brand small{display:block;font-size:10px;font-weight:600;color:var(--noche)}
-nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0}
-nav a{text-decoration:none;font-weight:600;font-size:15px;padding:6px 0;border-bottom:2px solid transparent}
-nav a.on,nav a:hover{border-color:var(--verde);color:var(--verde)}
-.burger{display:none;background:none;border:0;font-size:28px;cursor:pointer}
-.hero{position:relative;overflow:hidden;padding:56px 0 72px;background:radial-gradient(circle at 80% 30%,#bfe9fb 0,transparent 55%),var(--crema)}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
-.tag{display:inline-block;background:var(--verde);color:#fff;padding:5px 16px;border-radius:999px;font-weight:600;font-size:14px}
-.logo{font:800 clamp(56px,9vw,110px)/.85 "Work Sans";color:var(--lima);-webkit-text-stroke:3px var(--noche);paint-order:stroke fill;margin:14px 0 8px;letter-spacing:-2px}
-.logo span{display:block;color:#fff}
-.lema{display:inline-block;background:var(--verde);color:#fff;font:800 18px "Work Sans";padding:6px 22px;border-radius:999px;border:3px solid var(--noche)}
-.pilares{font-weight:600;font-size:18px;margin:20px 0 4px}
-.hero .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
-.mascota{width:100%;max-width:420px;margin:auto;display:block;animation:flota 4s ease-in-out infinite}
-@keyframes flota{50%{transform:translateY(-12px)}}
-@media(prefers-reduced-motion:reduce){.mascota{animation:none}html{scroll-behavior:auto}}
-.frase{position:absolute;right:4%;top:14%;font:italic 600 22px "Work Sans";color:var(--tinta);transform:rotate(-8deg);max-width:170px}
-.pilares-bar{background:#e8f6fd;padding:34px 0}
-.pilares-bar .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;text-align:center}
-.ico{width:64px;height:64px;border-radius:50%;margin:0 auto 10px;display:grid;place-items:center;font-size:28px;color:#fff}
-.pilares-bar h3{font-size:17px}.pilares-bar p{margin:2px 0 0;font-size:14px}
-.titulo{font-size:clamp(28px,4vw,40px);color:var(--verde);margin-bottom:12px}
-.sub{max-width:62ch;margin:0 0 32px}
-.dark{background:var(--noche);color:#fff}
-.dark .titulo{color:var(--lima)}
-.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.dia{background:#ffffff0d;border:1.5px solid var(--cielo);border-radius:14px;padding:16px;text-align:left;color:#fff;font:inherit;cursor:pointer}
-.dia[aria-selected=true]{background:var(--cielo);color:var(--noche)}
-.dia b{display:block;font:800 26px "Work Sans"}
-.dia span{font-size:13px;font-weight:600}
-.detalle{margin-top:18px;background:#ffffff14;border-radius:14px;padding:22px}
-.detalle h3{color:var(--lima);margin-bottom:6px}
-.detalle ul{margin:10px 0 0;padding-left:20px}
-.nosotros{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.cifras{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.cifra{background:#fff;border-radius:18px;padding:22px;border-left:6px solid var(--lima)}
-.cifra b{font:800 38px "Work Sans";color:var(--verde)}
-.proy{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.card{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 2px 10px #0000001a}
-.card .img{height:130px;display:grid;place-items:center;font-size:52px;background:linear-gradient(135deg,var(--cielo),var(--verde))}
-.card div.t{padding:16px}.card h3{font-size:18px;margin-bottom:6px}.card p{margin:0;font-size:14px}
-.car{position:relative;display:flex;align-items:center;gap:10px}
-.rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;flex:1}
-.rail::-webkit-scrollbar{display:none}
-.exp{flex:0 0 min(260px,70%);scroll-snap-align:start;background:#fff;color:var(--tinta);border-radius:14px;padding:22px 14px;text-align:center}
-.exp b{display:block;font:800 26px "Work Sans";margin-bottom:6px}
-.exp span{font-size:14px}
-.flecha{width:42px;height:42px;border-radius:50%;border:0;background:var(--lima);font-size:20px;cursor:pointer;flex:none}
-.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.galeria button{aspect-ratio:1;border:0;border-radius:16px;font-size:44px;cursor:pointer;color:#fff}
-.galeria button:nth-child(1){background:linear-gradient(135deg,#35763A,#CDD852)}
-.galeria button:nth-child(2){background:linear-gradient(135deg,#52C3F1,#0B2A4A)}
-.galeria button:nth-child(3){background:linear-gradient(135deg,#CDD852,#52C3F1)}
-.galeria button:nth-child(4){background:linear-gradient(135deg,#0B2A4A,#35763A)}
-.galeria button:nth-child(5){background:linear-gradient(135deg,#52C3F1,#35763A)}
-.galeria button:nth-child(6){background:linear-gradient(135deg,#35763A,#0B2A4A)}
-.galeria button:nth-child(7){background:linear-gradient(135deg,#CDD852,#35763A)}
-.galeria button:nth-child(8){background:linear-gradient(135deg,#0B2A4A,#52C3F1)}
-.lb{position:fixed;inset:0;background:#000c;display:none;place-items:center;z-index:50;padding:20px}
-.lb.open{display:grid}
-.lb div{background:#fff;border-radius:20px;padding:34px;max-width:420px;text-align:center}
-form{display:grid;gap:14px;background:#fff;border-radius:20px;padding:26px;box-shadow:0 2px 14px #0002;color:var(--tinta)}
-label{font-weight:600;font-size:14px;display:grid;gap:5px}
-input,select,textarea{font:inherit;padding:11px 12px;border:1.5px solid #9bb59f;border-radius:10px;background:#fff;color:var(--tinta)}
-.err{color:#b00020;font-size:13px;min-height:1em}
-.ok{background:var(--lima);color:var(--negro);padding:14px;border-radius:12px;font-weight:600;display:none}
-.dos{display:grid;grid-template-columns:1fr 1fr;gap:34px}
-.cta{background:linear-gradient(120deg,var(--verde),#1e5a2a);color:#fff;border-radius:28px;padding:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.cta h2{font-size:28px;color:var(--lima)}
-footer{background:var(--noche);color:#fff;padding:36px 0}
-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.redes{display:flex;gap:10px}
-.redes a{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--noche);display:grid;place-items:center;font-weight:800;text-decoration:none}
-.aliados{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-.aliados span{background:#ffffff1a;padding:4px 12px;border-radius:999px;font-size:13px}
-@media(max-width:900px){
-.burger{display:block}
-nav{position:absolute;left:0;right:0;top:72px;background:var(--crema);display:none;padding:12px 20px 20px;border-bottom:1px solid #0002}
-nav.open{display:block}nav ul{flex-direction:column;gap:12px}
-.nav>.btn{display:none}
-.hero .wrap,.nosotros,.dos{grid-template-columns:1fr}
-.pilares-bar .wrap{grid-template-columns:repeat(2,1fr)}
-.tabs{grid-template-columns:repeat(2,1fr)}
-.galeria{grid-template-columns:repeat(2,1fr)}
-.frase{display:none}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XI Feria TIC-ON — SENA</title>
+    <meta name="description" content="XI Feria TIC-ON: sembrando semillas de innovación. Tecnología, educación y sostenibilidad.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
 </head>
-<body>
-<header>
-<div class="wrap nav">
-<a class="brand" href="#inicio">XI FERIA<br>TIC-ON<small>SEMBRANDO SEMILLAS DE INNOVACIÓN</small></a>
-<button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false">☰</button>
-<nav id="menu" aria-label="Principal"><ul>
-<li><a href="#inicio" class="on">Inicio</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#proyectos">Proyectos</a></li><li><a href="#expositores">Expositores</a></li><li><a href="#agenda">Agenda</a></li><li><a href="#galeria">Galería</a></li><li><a href="#contacto">Contacto</a></li>
-</ul></nav>
-<a class="btn" href="#inscripciones">👤 Inscripciones</a>
-</div>
-</header>
+<body data-page="inicio" class="bg-white text-gray-800 antialiased overflow-x-hidden">
+    <site-nav></site-nav>
 
-<main>
-<section class="hero" id="inicio">
-<div class="wrap">
-<div>
-<span class="tag">Bienvenidos a la</span>
-<h1 class="logo">XI<span>FERIA</span>TIC-ON</h1>
-<span class="lema">SEMBRANDO SEMILLAS DE INNOVACIÓN</span>
-<p class="pilares">Tecnología · Educación · Sostenibilidad · Futuro</p>
-<p style="max-width:44ch;margin:0">Un espacio donde la innovación y la tecnología se unen para construir un mejor mañana.</p>
-<div class="btns"><a class="btn" href="#agenda">📅 Ver agenda</a><a class="btn ghost" href="#inscripciones">Inscribirme</a></div>
-</div>
-<div style="position:relative">
-<p class="frase">Ideas que germinan un mejor futuro</p>
-<svg class="mascota" viewBox="0 0 300 330" role="img" aria-label="Mascota robot azul del SENA con portátil">
-<ellipse cx="150" cy="315" rx="110" ry="12" fill="#35763A" opacity=".25"/>
-<rect x="85" y="170" width="130" height="120" rx="55" fill="#2d9fe0"/>
-<circle cx="90" cy="285" r="32" fill="#52C3F1"/><circle cx="210" cy="285" r="32" fill="#52C3F1"/>
-<rect x="105" y="215" width="95" height="62" rx="6" fill="#aab4bd" transform="rotate(-6 150 245)"/>
-<text x="150" y="205" text-anchor="middle" font-size="14" font-weight="800" fill="#fff" font-family="Work Sans">SENA</text>
-<circle cx="150" cy="105" r="78" fill="#52C3F1"/>
-<circle cx="150" cy="105" r="60" fill="#2d9fe0" opacity=".35"/>
-<path d="M62 110a88 88 0 0 1 176 0" fill="none" stroke="#0B2A4A" stroke-width="12" stroke-linecap="round"/>
-<rect x="45" y="95" width="28" height="48" rx="12" fill="#0B2A4A"/><rect x="227" y="95" width="28" height="48" rx="12" fill="#0B2A4A"/>
-<circle cx="123" cy="105" r="16" fill="#fff"/><circle cx="177" cy="105" r="16" fill="#fff"/>
-<circle cx="123" cy="105" r="8" fill="#0B2A4A"/><circle cx="177" cy="105" r="8" fill="#0B2A4A"/>
-<path d="M135 138q15 10 30 0" fill="none" stroke="#0B2A4A" stroke-width="5" stroke-linecap="round"/>
-<path d="M230 20q40-30 52 10-30 12-52-10z" fill="#35763A"/><path d="M215 25q-40-30-52 10 30 12 52-10z" fill="#CDD852"/>
-</svg>
-</div>
-</div>
-</section>
+    <main>
+        <!-- SECCIÓN HÉROE -->
+        <header class="relative bg-hero-pattern min-h-[500px] overflow-hidden">
+            <div class="absolute top-10 left-[-5%] w-32 h-32 bg-ticon-green opacity-80 leaf-shape transform -rotate-45 z-0"></div>
+            <div class="absolute bottom-10 left-[10%] w-16 h-16 bg-ticon-darkgreen opacity-90 leaf-shape transform rotate-12 z-0"></div>
+            <div class="absolute top-20 right-[5%] w-40 h-40 bg-ticon-green opacity-20 leaf-shape transform rotate-45 z-0"></div>
 
-<div class="pilares-bar"><div class="wrap">
-<div><div class="ico" style="background:#4aa14f">🍃</div><h3>Innovación</h3><p>Soluciones para un mundo mejor</p></div>
-<div><div class="ico" style="background:var(--cielo)">🔌</div><h3>Tecnología</h3><p>Herramientas que transforman</p></div>
-<div><div class="ico" style="background:var(--verde)">🌱</div><h3>Sostenibilidad</h3><p>Cuidamos hoy el mañana</p></div>
-<div><div class="ico" style="background:var(--lima);color:var(--negro)">👥</div><h3>Conocimiento</h3><p>Formación para el futuro</p></div>
-<div><div class="ico" style="background:var(--negro)">★</div><h3>Emprendimiento</h3><p>Talento que crea oportunidades</p></div>
-</div></div>
+            <div class="container mx-auto px-6 py-12 flex flex-col lg:flex-row items-center relative z-10">
 
-<section id="nosotros"><div class="wrap nosotros">
-<div>
-<h2 class="titulo">Nosotros</h2>
-<p>La Feria TIC-Ton es el encuentro anual del SENA y SENNOVA donde aprendices, instructores, empresas y aliados muestran proyectos de investigación, desarrollo tecnológico e innovación.</p>
-<p>En esta edición sembramos semillas de innovación: ideas con tecnología, formación y sostenibilidad que crecen para beneficiar a nuestras comunidades.</p>
-<a class="btn" href="#inscripciones">Quiero participar</a>
-</div>
-<div class="cifras">
-<div class="cifra"><b>XI</b><br>Edición de la feria</div>
-<div class="cifra"><b>4</b><br>Días de actividades</div>
-<div class="cifra"><b>5</b><br>Ejes temáticos</div>
-<div class="cifra"><b>+5</b><br>Aliados y expositores</div>
-</div></div></section>
+                <div class="lg:w-1/2 flex flex-col items-start space-y-6">
+                    <div class="bg-ticon-darkgreen text-white px-4 py-1 rounded-full text-sm font-semibold inline-block">
+                        Bienvenidos a la
+                    </div>
 
-<section id="proyectos" style="background:#fff"><div class="wrap">
-<h2 class="titulo">Proyectos</h2>
-<p class="sub">Una muestra de lo que se presentará en la Feria de Proyectos.</p>
-<div class="proy">
-<article class="card"><div class="img">🚁</div><div class="t"><h3>Agricultura de precisión</h3><p>Drones para monitorear cultivos y cuidar los recursos.</p></div></article>
-<article class="card"><div class="img">🤖</div><div class="t"><h3>Robótica educativa</h3><p>Prototipos construidos por aprendices para aprender haciendo.</p></div></article>
-<article class="card"><div class="img">♻️</div><div class="t"><h3>Tecnología sostenible</h3><p>Soluciones que reducen el impacto ambiental.</p></div></article>
-<article class="card"><div class="img">💡</div><div class="t"><h3>Emprendimiento TIC</h3><p>Ideas de negocio con base tecnológica.</p></div></article>
-</div></div></section>
+                    <h1 class="text-5xl lg:text-7xl font-black font-display leading-tight text-ticon-base uppercase italic">
+                        XI Feria <br>
+                        <span class="text-ticon-green">TIC-ON</span>
+                    </h1>
 
-<section class="dark" id="expositores"><div class="wrap">
-<h2 class="titulo">Expositores e innovación</h2>
-<p class="sub">Conoce a nuestros aliados, proyectos y propuestas que están transformando el presente.</p>
-<div class="car">
-<button class="flecha" id="prev" aria-label="Anterior">‹</button>
-<div class="rail" id="rail">
-<div class="exp"><b>SENA</b><span>Formación para el trabajo y la vida</span></div>
-<div class="exp"><b style="color:#1d6fb8">DJI</b><span>Tecnología aérea para un mejor futuro</span></div>
-<div class="exp"><b style="color:var(--verde)">CULTIVDRON</b><span>Agricultura de precisión</span></div>
-<div class="exp"><b style="color:var(--verde)">SENNOVA</b><span>Investigación, desarrollo tecnológico e innovación</span></div>
-<div class="exp"><b>RAFA</b><span>Robótica</span></div>
-</div>
-<button class="flecha" id="next" aria-label="Siguiente">›</button>
-</div>
-<div class="aliados"><span>SENA</span><span>SENNOVA</span><span>Cultivdron</span><span>RAFA Robótica</span><span>DJI Agriculture</span></div>
-</div></section>
+                    <div class="bg-ticon-green text-white px-4 py-1 rounded-full text-md font-bold uppercase tracking-wide">
+                        Sembrando semillas de innovación
+                    </div>
 
-<section id="agenda"><div class="wrap">
-<h2 class="titulo">Agenda del evento</h2>
-<p class="sub">Elige un día para ver horario y lugar.</p>
-<div class="tabs" role="tablist" id="tabs"></div>
-<div class="detalle dark" id="detalle" role="tabpanel" style="background:var(--noche)"></div>
-</div></section>
+                    <h2 class="text-xl font-bold text-ticon-base mt-4">
+                        Tecnología • Educación • Sostenibilidad • Futuro
+                    </h2>
 
-<section id="galeria" style="background:#fff"><div class="wrap">
-<h2 class="titulo">Galería</h2>
-<p class="sub">Momentos de la feria. Toca una imagen para ampliarla.</p>
-<div class="galeria" id="gal"></div>
-</div></section>
+                    <p class="text-gray-600 max-w-md">
+                        Un espacio donde la innovación y la tecnología se unen para construir un mejor mañana.
+                    </p>
 
-<section id="inscripciones"><div class="wrap">
-<div class="cta">
-<div><h2>¡Sé parte del cambio!</h2><p style="margin:6px 0 0;max-width:52ch">La feria es el punto de encuentro donde la tecnología, la educación y la sostenibilidad se unen para sembrar semillas de innovación.</p></div>
-</div>
-<div class="dos" style="margin-top:34px">
-<div><h2 class="titulo">Inscríbete ahora</h2><p>Completa el formulario y reserva tu lugar en las actividades de la feria.</p></div>
-<form id="insc" novalidate>
-<label>Nombre completo<input name="nombre" autocomplete="name" required><span class="err"></span></label>
-<label>Correo electrónico<input name="correo" type="email" autocomplete="email" required><span class="err"></span></label>
-<label>Tipo de participante<select name="tipo"><option>Aprendiz</option><option>Instructor</option><option>Empresa o aliado</option><option>Visitante</option></select></label>
-<label>Día de interés<select name="dia"><option>Todos los días</option><option>12 de mayo</option><option>13 de mayo</option><option>14 de mayo</option><option>15 de mayo</option></select></label>
-<button class="btn" type="submit">Enviar inscripción</button>
-<div class="ok" id="ok" role="status"></div>
-</form>
-</div></div></section>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a href="agenda.html" class="flex items-center gap-2 bg-ticon-darkgreen text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition shadow-md">
+                            <i class="ph ph-calendar-blank text-xl"></i>
+                            Ver Agenda
+                        </a>
+                        <a href="inscripciones.html" class="flex items-center gap-2 border-2 border-ticon-darkgreen text-ticon-darkgreen px-6 py-3 rounded-full font-bold hover:bg-ticon-darkgreen hover:text-white transition shadow-md bg-white">
+                            <i class="ph ph-user-plus text-xl"></i>
+                            Inscribirme
+                        </a>
+                    </div>
+                </div>
 
-<section id="contacto" class="dark"><div class="wrap dos">
-<div><h2 class="titulo">Contacto</h2><p>¿Quieres exponer, ser aliado o resolver una duda? Escríbenos y te respondemos pronto.</p></div>
-<form id="cont" novalidate>
-<label>Nombre<input name="n" required><span class="err"></span></label>
-<label>Correo<input name="c" type="email" required><span class="err"></span></label>
-<label>Mensaje<textarea name="m" rows="4" required></textarea><span class="err"></span></label>
-<button class="btn" type="submit">Enviar mensaje</button>
-<div class="ok" id="ok2" role="status"></div>
-</form>
-</div></section>
-</main>
+                <!-- Columna derecha: Mascota -->
+                <div class="lg:w-1/2 relative mt-12 lg:mt-0 flex justify-center">
+                    <div class="absolute w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-50 z-0"></div>
 
-<footer><div class="wrap">
-<div><b style="font:800 28px 'Work Sans'">SENA</b><br><small>X Feria TIC-Ton · Sembrando semillas de innovación</small></div>
-<div class="redes" aria-label="Redes sociales"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="TikTok">tt</a><a href="#" aria-label="X">X</a></div>
-<div style="background:#ffffff1a;padding:10px 18px;border-radius:999px;font-style:italic">¡Nos vemos en la feria! 🤖</div>
-</div></footer>
+                    <div class="relative z-10 text-center flex flex-col items-center">
+                        <div class="w-80 h-80 bg-gradient-to-tr from-ticon-lightblue to-white rounded-full flex items-center justify-center shadow-2xl border-4 border-white mb-4 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-ticon-lightblue opacity-20"></div>
+                            <img src="/assets/mascota-evento.svg" alt="Mascota oficial de la XI Feria TIC-ON" class="w-72 h-auto object-contain relative z-10 drop-shadow-xl">
+                        </div>
 
-<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada"><div><div id="lbi" style="font-size:90px"></div><p id="lbt"></p><button class="btn" id="lbc">Cerrar</button></div></div>
+                        <div class="absolute -right-10 top-10 bg-white p-4 rounded-3xl rounded-bl-none shadow-xl border border-gray-100 transform rotate-3">
+                            <p class="font-display font-bold text-ticon-darkgreen text-xl leading-tight">
+                                Ideas<br>que germinan<br>un mejor<br>futuro<span class="text-ticon-green text-2xl">🌿</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<script>
-var $=function(s){return document.querySelector(s)};
-var burger=$('#burger'),menu=$('#menu');
-burger.onclick=function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
-menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
-var links=[].slice.call(document.querySelectorAll('nav a'));
-var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'))});
-addEventListener('scroll',function(){var y=scrollY+120,k=0;secs.forEach(function(s,i){if(s&&s.offsetTop<=y)k=i});links.forEach(function(a,i){a.classList.toggle('on',i===k)})},{passive:true});
-var ag=[
-{d:12,t:'Conferencias magistrales',h:'9:00 a.m. – 11:00 a.m.',l:'Auditorio Principal',i:['Apertura oficial de la feria','Charlas sobre innovación y sostenibilidad']},
-{d:13,t:'Talleres interactivos',h:'10:00 a.m. – 2:00 p.m.',l:'Zona TIC',i:['Robótica y programación','Drones en agricultura de precisión']},
-{d:14,t:'Feria de proyectos',h:'9:00 a.m. – 5:00 p.m.',l:'Pabellón Innovación',i:['Exposición de proyectos de aprendices','Muestra de grupos SENNOVA']},
-{d:15,t:'Networking',h:'3:00 p.m. – 6:00 p.m.',l:'Zona de Expositores',i:['Encuentro con aliados y empresas','Cierre y reconocimientos']}];
-var tabs=$('#tabs'),det=$('#detalle');
-function showDia(n){[].forEach.call(tabs.children,function(b,i){b.setAttribute('aria-selected',i===n)});var a=ag[n];
-det.innerHTML='<h3>'+a.t+'</h3><p style="margin:0">🕒 '+a.h+' · 📍 '+a.l+'</p><ul>'+a.i.map(function(x){return'<li>'+x+'</li>'}).join('')+'</ul>'}
-ag.forEach(function(a,i){var b=document.createElement('button');b.className='dia';b.setAttribute('role','tab');b.innerHTML='<b>'+a.d+' MAY</b><span>'+a.t+'</span>';b.onclick=function(){showDia(i)};tabs.appendChild(b)});
-showDia(0);
-var rail=$('#rail');$('#prev').onclick=function(){rail.scrollBy({left:-280,behavior:'smooth'})};$('#next').onclick=function(){rail.scrollBy({left:280,behavior:'smooth'})};
-var gi=[['🌿','Siembra de ideas'],['🚁','Demostración con drones'],['🤖','Robótica en acción'],['🎤','Conferencias'],['🛠️','Talleres'],['🌱','Proyectos sostenibles'],['🤝','Networking'],['🏆','Reconocimientos']];
-var gal=$('#gal'),lb=$('#lb');
-gi.forEach(function(g){var b=document.createElement('button');b.textContent=g[0];b.setAttribute('aria-label',g[1]);b.onclick=function(){$('#lbi').textContent=g[0];$('#lbt').textContent=g[1];lb.classList.add('open');$('#lbc').focus()};gal.appendChild(b)});
-$('#lbc').onclick=function(){lb.classList.remove('open')};
-lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('open')});
-addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('open')});
-function validar(f,okId,msg){f.addEventListener('submit',function(e){e.preventDefault();var ok=true;
-[].forEach.call(f.querySelectorAll('input[required],textarea[required]'),function(c){var er=c.parentNode.querySelector('.err'),v=c.value.trim(),bad=!v||(c.type==='email'&&!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v));er.textContent=bad?(c.type==='email'?'Escribe un correo válido.':'Completa este campo.'):'';if(bad)ok=false});
-var o=$(okId);if(ok){o.style.display='block';o.textContent=msg;f.reset()}else{o.style.display='none'}})}
-validar($('#insc'),'#ok','¡Listo! Tu inscripción quedó registrada. Te escribiremos al correo indicado.');
-validar($('#cont'),'#ok2','Mensaje enviado. Te responderemos pronto.');
-</script>
+        <!-- SECCIÓN CARACTERÍSTICAS -->
+        <section class="py-16 bg-white relative z-20 shadow-[0_-10px_30px_rgba(0,0,0,0.05)]">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-ticon-green flex items-center justify-center text-white text-3xl mb-4 shadow-lg transform transition hover:scale-110">
+                            <i class="ph-fill ph-leaf"></i>
+                        </div>
+                        <h3 class="font-bold text-ticon-base text-lg">Innovación</h3>
+                        <p class="text-sm text-gray-500 mt-1 leading-tight">Soluciones para<br>un mundo mejor</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-ticon-lightblue flex items-center justify-center text-white text-3xl mb-4 shadow-lg transform transition hover:scale-110">
+                            <i class="ph-fill ph-cpu"></i>
+                        </div>
+                        <h3 class="font-bold text-ticon-base text-lg">Tecnología</h3>
+                        <p class="text-sm text-gray-500 mt-1 leading-tight">Herramientas que<br>transforman</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-ticon-darkgreen flex items-center justify-center text-white text-3xl mb-4 shadow-lg transform transition hover:scale-110">
+                            <i class="ph-fill ph-plant"></i>
+                        </div>
+                        <h3 class="font-bold text-ticon-base text-lg">Sostenibilidad</h3>
+                        <p class="text-sm text-gray-500 mt-1 leading-tight">Cuidamos hoy<br>el mañana</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-ticon-green text-3xl mb-4 shadow-lg transform transition hover:scale-110">
+                            <i class="ph-fill ph-users-three"></i>
+                        </div>
+                        <h3 class="font-bold text-ticon-base text-lg">Conocimiento</h3>
+                        <p class="text-sm text-gray-500 mt-1 leading-tight">Formación para<br>el futuro</p>
+                    </div>
+                    <div class="flex flex-col items-center col-span-2 md:col-span-1">
+                        <div class="w-20 h-20 rounded-full bg-ticon-base flex items-center justify-center text-white text-3xl mb-4 shadow-lg transform transition hover:scale-110">
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <h3 class="font-bold text-ticon-base text-lg">Emprendimiento</h3>
+                        <p class="text-sm text-gray-500 mt-1 leading-tight">Talento que<br>crea oportunidades</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN AGENDA Y EXPOSITORES -->
+        <section class="bg-ticon-base py-16 text-white relative">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
+
+                <!-- Agenda -->
+                <div class="lg:col-span-7">
+                    <div class="flex justify-between items-end mb-8 border-b border-ticon-baselight pb-4">
+                        <h2 class="text-3xl font-display font-bold flex items-center gap-3">
+                            <i class="ph ph-calendar-check text-ticon-green"></i>
+                            Agenda del Evento
+                        </h2>
+                        <a href="agenda.html" class="text-sm text-ticon-lightblue hover:text-white transition flex items-center gap-1">
+                            Ver toda la agenda <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <a href="agenda.html" class="block border border-ticon-lightblue bg-ticon-baselight bg-opacity-40 rounded-xl p-5 hover:bg-opacity-60 transition">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="bg-white text-ticon-base rounded-md px-3 py-1 text-center leading-tight">
+                                    <span class="block font-bold text-xl">12</span>
+                                    <span class="block text-xs font-bold uppercase">May</span>
+                                </div>
+                                <i class="ph ph-lightbulb text-3xl text-ticon-lightblue"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Conferencias Magistrales</h4>
+                            <div class="text-sm text-gray-300 space-y-1">
+                                <p class="flex items-center gap-2"><i class="ph ph-clock"></i> 9:00 a.m. – 11:00 a.m.</p>
+                                <p class="flex items-center gap-2 text-ticon-green"><i class="ph ph-map-pin"></i> Auditorio Principal</p>
+                            </div>
+                        </a>
+
+                        <a href="agenda.html" class="block border border-ticon-baselight bg-ticon-baselight bg-opacity-20 rounded-xl p-5 hover:border-ticon-lightblue transition">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="bg-transparent border border-gray-500 text-white rounded-md px-3 py-1 text-center leading-tight">
+                                    <span class="block font-bold text-xl">13</span>
+                                    <span class="block text-xs font-bold uppercase">May</span>
+                                </div>
+                                <i class="ph ph-laptop text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Talleres Interactivos</h4>
+                            <div class="text-sm text-gray-400 space-y-1">
+                                <p class="flex items-center gap-2"><i class="ph ph-clock"></i> 10:00 a.m. – 2:00 p.m.</p>
+                                <p class="flex items-center gap-2 text-ticon-green"><i class="ph ph-map-pin"></i> Zona TIC</p>
+                            </div>
+                        </a>
+
+                        <a href="agenda.html" class="block border border-ticon-baselight bg-ticon-baselight bg-opacity-20 rounded-xl p-5 hover:border-ticon-lightblue transition">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="bg-transparent border border-gray-500 text-white rounded-md px-3 py-1 text-center leading-tight">
+                                    <span class="block font-bold text-xl">14</span>
+                                    <span class="block text-xs font-bold uppercase">May</span>
+                                </div>
+                                <i class="ph ph-rocket-launch text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Feria de Proyectos</h4>
+                            <div class="text-sm text-gray-400 space-y-1">
+                                <p class="flex items-center gap-2"><i class="ph ph-clock"></i> 9:00 a.m. – 5:00 p.m.</p>
+                                <p class="flex items-center gap-2 text-ticon-green"><i class="ph ph-map-pin"></i> Pabellón Innovación</p>
+                            </div>
+                        </a>
+
+                        <a href="agenda.html" class="block border border-ticon-baselight bg-ticon-baselight bg-opacity-20 rounded-xl p-5 hover:border-ticon-lightblue transition">
+                            <div class="flex justify-between items-start mb-4">
+                                <div class="bg-transparent border border-gray-500 text-white rounded-md px-3 py-1 text-center leading-tight">
+                                    <span class="block font-bold text-xl">15</span>
+                                    <span class="block text-xs font-bold uppercase">May</span>
+                                </div>
+                                <i class="ph ph-users text-3xl text-gray-400"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Networking</h4>
+                            <div class="text-sm text-gray-400 space-y-1">
+                                <p class="flex items-center gap-2"><i class="ph ph-clock"></i> 3:00 p.m. – 6:00 p.m.</p>
+                                <p class="flex items-center gap-2 text-ticon-green"><i class="ph ph-map-pin"></i> Zona de Expositores</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Expositores -->
+                <div class="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-ticon-baselight pt-8 lg:pt-0 lg:pl-8">
+                    <div class="flex justify-between items-start mb-6">
+                        <div>
+                            <h2 class="text-2xl font-display font-bold flex items-center gap-3">
+                                <i class="ph ph-users-three text-ticon-green"></i>
+                                Expositores e Innovación
+                            </h2>
+                            <p class="text-sm text-gray-300 mt-2">Conoce a nuestros aliados, proyectos y <span class="border-b border-ticon-lightblue">propuestas</span> que están transformando el presente.</p>
+                        </div>
+                        <a href="expositores.html" class="bg-ticon-green text-ticon-base px-4 py-2 rounded-full font-bold text-sm whitespace-nowrap hover:bg-white transition flex items-center gap-1">
+                            Ver Expositores <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <div class="mt-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px]">
+                                <div class="h-16 flex items-center justify-center mb-2">
+                                    <i class="ph-fill ph-robot text-4xl text-ticon-lightblue"></i>
+                                </div>
+                                <p class="font-black text-lg font-display">Robótica</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Misiones autónomas</p>
+                            </div>
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px] border-b-4 border-ticon-lightblue">
+                                <div class="h-16 flex items-center justify-center mb-2">
+                                    <i class="ph-fill ph-drone text-4xl text-ticon-green"></i>
+                                </div>
+                                <p class="font-black text-lg font-display">AgroPrecisión</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Drones y sensores</p>
+                            </div>
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px]">
+                                <div class="h-16 flex items-center justify-center mb-2">
+                                    <i class="ph-fill ph-lightning text-4xl text-ticon-base"></i>
+                                </div>
+                                <p class="font-black text-lg font-display">Energía</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Limpias y renovables</p>
+                            </div>
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px]">
+                                <div class="h-16 flex items-center justify-center mb-2">
+                                    <i class="ph-fill ph-code text-4xl text-ticon-darkgreen"></i>
+                                </div>
+                                <p class="font-black text-lg font-display">Software</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Innovación digital</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script type="module" src="/src/main.js"></script>
 </body>
 </html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda — XI Feria TIC-ON</title>
+    <meta name="description" content="Cronograma completo de la XI Feria TIC-ON: 12 al 15 de mayo.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body data-page="agenda" class="bg-white text-gray-800 antialiased overflow-x-hidden">
+    <site-nav></site-nav>
+
+    <main>
+        <!-- Cabecera de página -->
+        <header class="relative bg-ticon-base text-white py-16 overflow-hidden">
+            <div class="absolute top-6 right-[5%] w-40 h-40 bg-ticon-green opacity-20 leaf-shape transform rotate-45 z-0"></div>
+            <div class="absolute bottom-6 left-[5%] w-24 h-24 bg-ticon-lightblue opacity-20 leaf-shape transform -rotate-12 z-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <p class="text-ticon-green font-semibold uppercase tracking-widest text-sm mb-2">Agenda</p>
+                <h1 class="text-4xl lg:text-5xl font-black font-display uppercase italic">Cuatro días de innovación</h1>
+                <p class="text-gray-300 mt-3 max-w-2xl">Del 12 al 15 de mayo. Explora el cronograma por día y planea tu visita.</p>
+            </div>
+        </header>
+
+        <!-- Selector de días -->
+        <section class="py-10 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-wrap gap-3" id="dias">
+                    <button data-dia="12" class="bg-ticon-darkgreen text-white px-6 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">12 · May</button>
+                    <button data-dia="13" class="bg-ticon-base text-white px-6 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">13 · May</button>
+                    <button data-dia="14" class="bg-ticon-base text-white px-6 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">14 · May</button>
+                    <button data-dia="15" class="bg-ticon-base text-white px-6 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90">15 · May</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cronograma -->
+        <section class="pb-16 bg-white">
+            <div class="container mx-auto px-6 max-w-3xl space-y-6" data-schedule></div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        const PROGRAMACION = {
+            12: [
+                { hora: '8:30', titulo: 'Apertura y bienvenida', lugar: 'Auditorio Principal', icono: 'ph ph-door-open' },
+                { hora: '9:00', titulo: 'Conferencias magistrales', lugar: 'Auditorio Principal', icono: 'ph ph-lightbulb' },
+                { hora: '11:00', titulo: 'Recorrido por los stands', lugar: 'Pabellón Innovación', icono: 'ph ph-storefront' },
+                { hora: '2:00', titulo: 'Muestras artísticas y culturales', lugar: 'Plaza Central', icono: 'ph ph-palette' },
+            ],
+            13: [
+                { hora: '9:00', titulo: 'Talleres de robótica', lugar: 'Zona TIC', icono: 'ph ph-robot' },
+                { hora: '10:00', titulo: 'Talleres interactivos', lugar: 'Zona TIC', icono: 'ph ph-laptop' },
+                { hora: '2:00', titulo: 'Demo de drones agrícolas', lugar: 'Campo Experimental', icono: 'ph ph-drone' },
+                { hora: '4:00', titulo: 'Charla: Innovación abierta', lugar: 'Auditorio Secundario', icono: 'ph ph-users-three' },
+            ],
+            14: [
+                { hora: '9:00', titulo: 'Feria de proyectos', lugar: 'Pabellón Innovación', icono: 'ph ph-rocket-launch' },
+                { hora: '11:00', titulo: 'Ronda de emprendimiento', lugar: 'Salón de Negocios', icono: 'ph ph-handshake' },
+                { hora: '2:00', titulo: 'Concursos tecnológicos', lugar: 'Zona TIC', icono: 'ph ph-trophy' },
+                { hora: '5:00', titulo: 'Premiación de proyectos', lugar: 'Auditorio Principal', icono: 'ph ph-star' },
+            ],
+            15: [
+                { hora: '9:00', titulo: 'Foro: Futuro de la industria', lugar: 'Auditorio Principal', icono: 'ph ph-chats-circle' },
+                { hora: '11:00', titulo: 'Networking', lugar: 'Zona de Expositores', icono: 'ph ph-users' },
+                { hora: '2:00', titulo: 'Clausura y balance', lugar: 'Auditorio Principal', icono: 'ph ph-door-open' },
+                { hora: '4:00', titulo: 'Cierre oficial', lugar: 'Plaza Central', icono: 'ph ph-party-popper' },
+            ],
+        }
+
+        const contenedor = document.querySelector('[data-schedule]')
+        const botones = document.querySelectorAll('#dias button')
+        const activar = (boton) => {
+            const dia = boton.dataset.dia
+            botones.forEach((b) => {
+                b.className = 'bg-ticon-base text-white px-6 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90'
+            })
+            boton.className = 'bg-ticon-darkgreen text-white px-6 py-2 rounded-full font-bold text-sm transition hover:bg-opacity-90'
+            contenedor.replaceChildren()
+            PROGRAMACION[dia].forEach((item) => {
+                const card = document.createElement('article')
+                card.className = 'flex gap-4 items-start bg-ticon-gray rounded-2xl p-5'
+                const icono = document.createElement('div')
+                icono.className = 'w-12 h-12 shrink-0 rounded-full bg-white shadow flex items-center justify-center text-ticon-darkgreen text-xl'
+                const i = document.createElement('i')
+                i.className = item.icono
+                icono.append(i)
+                const cuerpo = document.createElement('div')
+                const titulo = document.createElement('h3')
+                titulo.className = 'font-bold text-ticon-base'
+                titulo.textContent = item.titulo
+                const hora = document.createElement('p')
+                hora.className = 'text-sm text-ticon-darkgreen font-semibold flex items-center gap-1'
+                const clock = document.createElement('i')
+                clock.className = 'ph ph-clock'
+                hora.append(clock, item.hora + ' a.m.')
+                const lugar = document.createElement('p')
+                lugar.className = 'text-sm text-gray-500 flex items-center gap-1'
+                const pin = document.createElement('i')
+                pin.className = 'ph ph-map-pin'
+                lugar.append(pin, item.lugar)
+                cuerpo.append(titulo, hora, lugar)
+                card.append(icono, cuerpo)
+                contenedor.append(card)
+            })
+        }
+        activar(botones[0])
+        botones.forEach((b) => b.addEventListener('click', () => activar(b)))
+    </script>
+</body>
+</html>

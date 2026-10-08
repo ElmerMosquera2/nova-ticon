@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripciones — XI Feria TIC-ON</title>
+    <meta name="description" content="Inscríbete a la XI Feria TIC-ON del SENA.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body data-page="inscripciones" class="bg-white text-gray-800 antialiased overflow-x-hidden">
+    <site-nav></site-nav>
+
+    <main>
+        <!-- Cabecera de página -->
+        <header class="relative bg-ticon-base text-white py-16 overflow-hidden">
+            <div class="absolute top-6 right-[5%] w-40 h-40 bg-ticon-green opacity-20 leaf-shape transform rotate-45 z-0"></div>
+            <div class="absolute bottom-6 left-[5%] w-24 h-24 bg-ticon-lightblue opacity-20 leaf-shape transform -rotate-12 z-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <p class="text-ticon-green font-semibold uppercase tracking-widest text-sm mb-2">Inscripciones</p>
+                <h1 class="text-4xl lg:text-5xl font-black font-display uppercase italic">Reserva tu lugar</h1>
+                <p class="text-gray-300 mt-3 max-w-2xl">Diligenciá el formulario y sé parte de esta nueva edición de la feria. Cupos limitados.</p>
+            </div>
+        </header>
+
+        <!-- Formulario -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <!-- Beneficios -->
+                <div class="lg:col-span-5 space-y-4">
+                    <h2 class="text-2xl font-display font-bold text-ticon-base mb-4">¿Qué incluye tu inscripción?</h2>
+                    <div class="flex items-start gap-3 bg-ticon-gray rounded-2xl p-5">
+                        <i class="ph-fill ph-calendar-check text-3xl text-ticon-darkgreen"></i>
+                        <div>
+                            <h3 class="font-bold text-ticon-base">Acceso a toda la agenda</h3>
+                            <p class="text-sm text-gray-600">Conferencias, talleres y networking durante los 4 días.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-ticon-gray rounded-2xl p-5">
+                        <i class="ph-fill ph-ticket text-3xl text-ticon-darkgreen"></i>
+                        <div>
+                            <h3 class="font-bold text-ticon-base">Certificado de participación</h3>
+                            <p class="text-sm text-gray-600">Emitido por el SENA de forma digital al finalizar el evento.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 bg-ticon-gray rounded-2xl p-5">
+                        <i class="ph-fill ph-storefront text-3xl text-ticon-darkgreen"></i>
+                        <div>
+                            <h3 class="font-bold text-ticon-base">Zonas de demostración</h3>
+                            <p class="text-sm text-gray-600">Recorridos guiados por los stands y el campo experimental.</p>
+                        </div>
+                    </div>
+                    <div class="bg-ticon-base rounded-2xl p-6 text-white mt-6">
+                        <h3 class="font-bold font-display mb-2">¿Aprendiz mostrando proyecto?</h3>
+                        <p class="text-sm text-gray-300">Selecciona la opción <strong>"Expositor"</strong> y envíanos tu propuesta para asignarte stand.</p>
+                    </div>
+                </div>
+
+                <!-- Formulario -->
+                <div class="lg:col-span-7 bg-ticon-gray rounded-3xl p-8">
+                    <h2 class="text-2xl font-display font-bold text-ticon-base mb-6">Datos del asistente</h2>
+                    <form id="form-inscripcion" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Tipo de asistente</span>
+                            <select name="tipo" class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                                <option>Visitante</option>
+                                <option>Aprendiz SENA</option>
+                                <option>Instructor / Docente</option>
+                                <option>Empresario / Emprendedor</option>
+                                <option>Expositor</option>
+                            </select>
+                        </label>
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Tipo de documento</span>
+                            <select name="tipodoc" class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                                <option>Cédula de ciudadanía</option>
+                                <option>Tarjeta de identidad</option>
+                                <option>Pasaporte</option>
+                                <option>Otro</option>
+                            </select>
+                        </label>
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Número de documento</span>
+                            <input type="text" name="documento" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Número de celular</span>
+                            <input type="tel" name="celular" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block sm:col-span-2">
+                            <span class="text-sm font-medium text-gray-700">Nombres y apellidos</span>
+                            <input type="text" name="nombre" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block sm:col-span-2">
+                            <span class="text-sm font-medium text-gray-700">Correo electrónico</span>
+                            <input type="email" name="email" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block sm:col-span-2">
+                            <span class="text-sm font-medium text-gray-700">Programa de formación / Empresa (opcional)</span>
+                            <input type="text" name="programa" class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block sm:col-span-2 flex items-center gap-3">
+                            <input type="checkbox" name="datos" required class="w-4 h-4 accent-ticon-darkgreen">
+                            <span class="text-sm text-gray-600">Acepto la política de tratamiento de datos personales.</span>
+                        </label>
+                        <button type="submit" id="btn-inscribir" class="sm:col-span-2 inline-flex items-center justify-center gap-2 bg-ticon-darkgreen text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition shadow-md">
+                            <i class="ph ph-user-plus text-xl"></i>
+                            Completar inscripción
+                        </button>
+                    </form>
+                    <div id="confirmacion" class="hidden mt-6 bg-ticon-green/20 border border-ticon-green rounded-2xl p-6 text-ticon-base flex items-start gap-4">
+                        <i class="ph-fill ph-check-circle text-4xl text-ticon-darkgreen"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">¡Inscripción recibida!</h3>
+                            <p class="text-sm">Te confirmaremos el cupo al correo que registraste. Formulario de demostración: esta propuesta aún no envía datos a un servidor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        const formulario = document.getElementById('form-inscripcion')
+        const confirmacion = document.getElementById('confirmacion')
+        formulario.addEventListener('submit', (evento) => {
+            evento.preventDefault()
+            confirmacion.classList.remove('hidden')
+            formulario.classList.add('hidden')
+            confirmacion.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        })
+    </script>
+</body>
+</html>

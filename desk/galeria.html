@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería — XI Feria TIC-ON</title>
+    <meta name="description" content="Galería de imágenes de la XI Feria TIC-ON del SENA.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body data-page="galeria" class="bg-white text-gray-800 antialiased overflow-x-hidden">
+    <site-nav></site-nav>
+
+    <main>
+        <!-- Cabecera de página -->
+        <header class="relative bg-ticon-base text-white py-16 overflow-hidden">
+            <div class="absolute top-6 right-[5%] w-40 h-40 bg-ticon-green opacity-20 leaf-shape transform rotate-45 z-0"></div>
+            <div class="absolute bottom-6 left-[5%] w-24 h-24 bg-ticon-lightblue opacity-20 leaf-shape transform -rotate-12 z-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <p class="text-ticon-green font-semibold uppercase tracking-widest text-sm mb-2">Galería</p>
+                <h1 class="text-4xl lg:text-5xl font-black font-display uppercase italic">Momentos que inspiran</h1>
+                <p class="text-gray-300 mt-3 max-w-2xl">Revive los mejores momentos de la feria. Las fotografías oficiales se publicarán durante el evento.</p>
+            </div>
+        </header>
+
+        <!-- Galería -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <button data-caption="Inauguración de la feria" class="group relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-ticon-lightblue to-blue-300 flex items-center justify-center hover:scale-[1.02] transition shadow-lg">
+                    <i class="ph-fill ph-door-open text-7xl text-white/80 group-hover:scale-110 transition"></i>
+                    <span class="absolute bottom-0 inset-x-0 bg-ticon-base/80 text-white text-sm font-medium px-4 py-2 text-left">Inauguración de la feria</span>
+                </button>
+
+                <button data-caption="Stands del Pabellón Innovación" class="group relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-ticon-green to-ticon-darkgreen flex items-center justify-center hover:scale-[1.02] transition shadow-lg">
+                    <i class="ph-fill ph-storefront text-7xl text-white/80 group-hover:scale-110 transition"></i>
+                    <span class="absolute bottom-0 inset-x-0 bg-ticon-base/80 text-white text-sm font-medium px-4 py-2 text-left">Stands del Pabellón Innovación</span>
+                </button>
+
+                <button data-caption="Demostración de drones" class="group relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-ticon-darkgreen to-ticon-base flex items-center justify-center hover:scale-[1.02] transition shadow-lg">
+                    <i class="ph-fill ph-drone text-7xl text-white/80 group-hover:scale-110 transition"></i>
+                    <span class="absolute bottom-0 inset-x-0 bg-ticon-base/80 text-white text-sm font-medium px-4 py-2 text-left">Demostración de drones</span>
+                </button>
+
+                <button data-caption="Talleres interactivos" class="group relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-ticon-base to-ticon-lightblue flex items-center justify-center hover:scale-[1.02] transition shadow-lg">
+                    <i class="ph-fill ph-laptop text-7xl text-white/80 group-hover:scale-110 transition"></i>
+                    <span class="absolute bottom-0 inset-x-0 bg-ticon-base/80 text-white text-sm font-medium px-4 py-2 text-left">Talleres interactivos</span>
+                </button>
+
+                <button data-caption="Robótica en acción" class="group relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-ticon-lightblue to-ticon-darkgreen flex items-center justify-center hover:scale-[1.02] transition shadow-lg">
+                    <i class="ph-fill ph-robot text-7xl text-white/80 group-hover:scale-110 transition"></i>
+                    <span class="absolute bottom-0 inset-x-0 bg-ticon-base/80 text-white text-sm font-medium px-4 py-2 text-left">Robótica en acción</span>
+                </button>
+
+                <button data-caption="Premiación de proyectos" class="group relative h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-yellow-400 to-ticon-green flex items-center justify-center hover:scale-[1.02] transition shadow-lg">
+                    <i class="ph-fill ph-trophy text-7xl text-white/80 group-hover:scale-110 transition"></i>
+                    <span class="absolute bottom-0 inset-x-0 bg-ticon-base/80 text-white text-sm font-medium px-4 py-2 text-left">Premiación de proyectos</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="hidden fixed inset-0 z-[100] bg-ticon-base/90 backdrop-blur-sm items-center justify-center p-6">
+        <button id="close-lightbox" class="absolute top-6 right-6 text-white text-3xl hover:text-ticon-green transition" aria-label="Cerrar">
+            <i class="ph-fill ph-x"></i>
+        </button>
+        <div id="lightbox-content" class="max-w-2xl w-full text-center"></div>
+    </div>
+
+    <site-footer></site-footer>
+
+    <script type="module" src="/src/main.js"></script>
+    <script>
+        const lightbox = document.getElementById('lightbox')
+        const contenido = document.getElementById('lightbox-content')
+        const cerrar = document.getElementById('close-lightbox')
+
+        document.querySelectorAll('[data-caption]').forEach((boton) => {
+            boton.addEventListener('click', () => {
+                contenido.replaceChildren()
+                const icono = boton.querySelector('i').cloneNode(true)
+                icono.className = icono.className.replace('text-7xl', 'text-[10rem]')
+                const gran = document.createElement('div')
+                gran.className = 'w-full h-96 rounded-3xl overflow-hidden flex items-center justify-center ' + boton.className.split('relative h-64 ')[1].split(' flex')[0]
+                gran.append(icono)
+                const titulo = document.createElement('p')
+                titulo.className = 'text-white text-xl font-display font-bold mt-5'
+                titulo.textContent = boton.dataset.caption
+                contenido.append(gran, titulo)
+                lightbox.classList.remove('hidden')
+                lightbox.classList.add('flex')
+            })
+        })
+        cerrar.addEventListener('click', () => {
+            lightbox.classList.add('hidden')
+            lightbox.classList.remove('flex')
+        })
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.add('hidden')
+                lightbox.classList.remove('flex')
+            }
+        })
+    </script>
+</body>
+</html>

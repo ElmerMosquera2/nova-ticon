@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto — XI Feria TIC-ON</title>
+    <meta name="description" content="Contacta al equipo organizador de la XI Feria TIC-ON del SENA.">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body data-page="contacto" class="bg-white text-gray-800 antialiased overflow-x-hidden">
+    <site-nav></site-nav>
+
+    <main>
+        <!-- Cabecera de página -->
+        <header class="relative bg-ticon-base text-white py-16 overflow-hidden">
+            <div class="absolute top-6 right-[5%] w-40 h-40 bg-ticon-green opacity-20 leaf-shape transform rotate-45 z-0"></div>
+            <div class="absolute bottom-6 left-[5%] w-24 h-24 bg-ticon-lightblue opacity-20 leaf-shape transform -rotate-12 z-0"></div>
+            <div class="container mx-auto px-6 relative z-10">
+                <p class="text-ticon-green font-semibold uppercase tracking-widest text-sm mb-2">Contacto</p>
+                <h1 class="text-4xl lg:text-5xl font-black font-display uppercase italic">Escríbenos</h1>
+                <p class="text-gray-300 mt-3 max-w-2xl">Resolvemos dudas sobre inscripciones, espacios, expositores y voluntariado.</p>
+            </div>
+        </header>
+
+        <!-- Formulario + datos -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+                <div class="lg:col-span-7 bg-ticon-gray rounded-3xl p-8">
+                    <h2 class="text-2xl font-display font-bold text-ticon-base mb-6">Enviar mensaje</h2>
+                    <form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Nombre</span>
+                            <input type="text" name="nombre" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block">
+                            <span class="text-sm font-medium text-gray-700">Correo electrónico</span>
+                            <input type="email" name="email" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                        </label>
+                        <label class="block sm:col-span-2">
+                            <span class="text-sm font-medium text-gray-700">Asunto</span>
+                            <select name="asunto" class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green">
+                                <option>Información general</option>
+                                <option>Inscripciones</option>
+                                <option>Ser expositor</option>
+                                <option>Voluntariado</option>
+                                <option>Prensa</option>
+                            </select>
+                        </label>
+                        <label class="block sm:col-span-2">
+                            <span class="text-sm font-medium text-gray-700">Mensaje</span>
+                            <textarea name="mensaje" rows="5" required class="mt-1 w-full rounded-lg bg-white border border-gray-200 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ticon-green"></textarea>
+                        </label>
+                        <button type="submit" class="sm:col-span-2 inline-flex items-center justify-center gap-2 bg-ticon-darkgreen text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition shadow-md">
+                            <i class="ph ph-paper-plane-tilt text-xl"></i>
+                            Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <div class="lg:col-span-5 space-y-5">
+                    <div class="bg-ticon-gray rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 rounded-full bg-white shadow flex items-center justify-center text-ticon-darkgreen text-xl"><i class="ph-fill ph-map-pin"></i></div>
+                        <div>
+                            <h3 class="font-bold text-ticon-base">Dirección</h3>
+                            <p class="text-sm text-gray-600">Complejo Tecnológico Agroindustrial, SENA — Centro de la ciudad.</p>
+                        </div>
+                    </div>
+                    <div class="bg-ticon-gray rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 rounded-full bg-white shadow flex items-center justify-center text-ticon-darkgreen text-xl"><i class="ph-fill ph-phone-call"></i></div>
+                        <div>
+                            <h3 class="font-bold text-ticon-base">Teléfono</h3>
+                            <p class="text-sm text-gray-600">+57 (1) 000 00 00 · Ext. 000</p>
+                        </div>
+                    </div>
+                    <div class="bg-ticon-gray rounded-2xl p-6 flex items-start gap-4">
+                        <div class="w-12 h-12 shrink-0 rounded-full bg-white shadow flex items-center justify-center text-ticon-darkgreen text-xl"><i class="ph-fill ph-envelope"></i></div>
+                        <div>
+                            <h3 class="font-bold text-ticon-base">Correo</h3>
+                            <p class="text-sm text-gray-600">contacto@feriaticon.edu.co</p>
+                        </div>
+                    </div>
+                    <div class="bg-ticon-base rounded-2xl p-6 text-white">
+                        <h3 class="font-bold font-display mb-3">Síguenos</h3>
+                        <div class="flex gap-3">
+                            <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white text-ticon-base flex items-center justify-center hover:bg-ticon-green hover:text-white transition"><i class="ph-fill ph-facebook-logo"></i></a>
+                            <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white text-ticon-base flex items-center justify-center hover:bg-ticon-green hover:text-white transition"><i class="ph-fill ph-instagram-logo"></i></a>
+                            <a href="#" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white text-ticon-base flex items-center justify-center hover:bg-ticon-green hover:text-white transition"><i class="ph-fill ph-youtube-logo"></i></a>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl overflow-hidden border border-gray-200 h-48 flex flex-col items-center justify-center bg-ticon-gray text-center gap-2">
+                        <i class="ph-fill ph-map-trifold text-5xl text-ticon-darkgreen"></i>
+                        <p class="text-sm font-medium text-gray-600">Ubicación en el mapa (placeholder)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
