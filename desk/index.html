@@ -252,8 +252,78 @@ nav.open{display:block}nav ul{flex-direction:column;gap:12px}
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Imagen ampliada"><div><div id="lbi" style="font-size:90px"></div><p id="lbt"></p><button class="btn" id="lbc">Cerrar</button></div></div>
 
 <script>
-var $=function(s){return document.querySelector(s)};
-var burger=$('#burger'),menu=$('#menu');
+function navegarA(seccionId) {
+  // Ocultar todas las secciones
+  const todasSecciones = document.querySelectorAll('section[id]');
+  todasSecciones.forEach(section => {
+    section.style.display = 'none';
+  });
+  
+  // Mostrar la sección seleccionada
+  const seccion = document.getElementById(seccionId);
+  if (seccion) {
+    seccion.style.display = 'block';
+  }
+  
+  // Actualizar el navbar active state
+  const enlaces = document.querySelectorAll('nav a');
+  enlaces.forEach(enlace => {
+    enlace.classList.remove('on');
+    if (enlace.getAttribute('href') === '#' + seccionId) {
+      enlace.classList.add('on');
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  navegarA('inicio');
+});
+
+// Manejar clicks en los enlaces del navbar
+document.addEventListener('click', function(e) {
+  const enlace = e.target.closest('nav a');
+  if (enlace) {
+    e.preventDefault();
+    const href = enlace.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      const id = href.substring(1);
+      navegarA(id);
+    }
+  }
+});
+
+// Mantenir compatibilidad con el menú móvil original
+var $ = function(s) { return document.querySelector(s) };
+var burger = $('#burger'), menu = $('#menu');
+burger.onclick = function() {
+  var o = menu.classList.toggle('open');
+  burger.setAttribute('aria-expanded', o);
+};
+menu.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A') {
+    menu.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+});
+
+// Efecto de highlight al hacer scroll
+var links = document.querySelectorAll('nav a');
+var secs = links.map(function(a) {
+  return document.querySelector(a.getAttribute('href'));
+});
+addEventListener('scroll', function() {
+  var y = scrollY + 120;
+  var k = 0;
+  secs.forEach(function(s, i) {
+    if (s && s.offsetTop <= y) k = i;
+  });
+  links.forEach(function(a, i) {
+    a.classList.toggle('on', i === k);
+  });
+}, { passive: true});
+
+var $ = function(s) { return document.querySelector(s) };
+</script>
 burger.onclick=function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o)};
 menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
 var links=[].slice.call(document.querySelectorAll('nav a'));
@@ -281,6 +351,5 @@ function validar(f,okId,msg){f.addEventListener('submit',function(e){e.preventDe
 var o=$(okId);if(ok){o.style.display='block';o.textContent=msg;f.reset()}else{o.style.display='none'}})}
 validar($('#insc'),'#ok','¡Listo! Tu inscripción quedó registrada. Te escribiremos al correo indicado.');
 validar($('#cont'),'#ok2','Mensaje enviado. Te responderemos pronto.');
-</script>
 </body>
 </html>
