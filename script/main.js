@@ -33,7 +33,7 @@ export function el(tag, props = {}, ...children) {
     else if (key === 'style' && typeof value === 'object') {
       Object.assign(node.style, value)
     } else if (key.startsWith('on') && typeof value === 'function') {
-      node.addEventListener(key.slice(2), value)
+      node.addEventListener(key.slice(2).toLowerCase(), value)
     } else if (key === 'svg') node.setAttribute(value, true)
     else node.setAttribute(key, value)
   }
@@ -60,7 +60,7 @@ const LINKS = [
   { page: 'inicio', label: 'Inicio', file: 'index.html' },
   { page: 'nosotros', label: 'Nosotros', file: 'nosotros.html' },
   { page: 'proyectos', label: 'Proyectos', file: 'proyectos.html' },
-  { page: 'expositores', label: 'Expositores', file: 'expositores.html' },
+  { page: 'expositores', label: 'Aliados', file: 'expositores.html' },
   { page: 'agenda', label: 'Agenda', file: 'agenda.html' },
   { page: 'galeria', label: 'Galería', file: 'galeria.html' },
   { page: 'contacto', label: 'Contacto', file: 'contacto.html' },
@@ -119,7 +119,7 @@ class SiteNav extends HTMLElement {
     const mobileMenu = el(
       'div',
       {
-        class: 'md:hidden hidden flex-col gap-1 px-6 pb-6 bg-ticon-base',
+        class: 'md:hidden hidden flex-col gap-1 px-6 py-4 bg-ticon-base relative z-50 shadow-xl',
         dataset: { menu: '' },
       },
       ...mobileLinks,
@@ -135,6 +135,8 @@ class SiteNav extends HTMLElement {
       ),
     )
 
+    const toggleIcon = el('i', { class: 'ph-fill ph-list' })
+
     const toggle = el(
       'button',
       {
@@ -142,14 +144,17 @@ class SiteNav extends HTMLElement {
         class:
           'md:hidden text-ticon-base text-2xl p-2 rounded-lg hover:bg-ticon-gray transition',
         'aria-label': 'Abrir menú',
+        'aria-expanded': 'false',
         onClick: () => {
           open = !open
           toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú')
+          toggle.setAttribute('aria-expanded', String(open))
+          toggleIcon.className = open ? 'ph-fill ph-x' : 'ph-fill ph-list'
           mobileMenu.classList.toggle('hidden', !open)
           mobileMenu.classList.toggle('flex', open)
         },
       },
-      el('i', { class: 'ph-fill ph-list' }),
+      toggleIcon,
     )
 
     const nav = el(

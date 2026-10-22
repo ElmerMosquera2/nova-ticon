@@ -16,40 +16,71 @@
 
     <main>
         <!-- SECCIÓN HÉROE -->
-        <header class="relative bg-hero-pattern w-full overflow-hidden flex items-center">
-            <div class="container mx-auto px-6 py-6 lg:py-4 flex flex-col lg:flex-row items-center relative z-10">
+        <header class="relative bg-hero-pattern min-h-[480px] overflow-hidden flex items-center">
+            <!-- Formas decorativas del fondo -->
+            <div class="pointer-events-none absolute -top-8 -left-10 w-36 h-36 bg-ticon-green opacity-85 leaf-shape -rotate-45 z-0"></div>
+            <div class="pointer-events-none absolute -bottom-12 -left-10 w-44 h-44 rounded-full bg-ticon-lightblue/75 z-0"></div>
+            <div class="pointer-events-none absolute bottom-4 left-6 w-20 h-20 bg-ticon-green opacity-90 leaf-shape rotate-12 z-0"></div>
+            <div class="pointer-events-none hidden lg:block absolute -top-24 right-[18%] w-96 h-96 rounded-full bg-sky-300/45 blur-md z-0"></div>
+            <div class="pointer-events-none absolute -top-6 right-12 w-28 h-28 bg-ticon-green opacity-80 leaf-shape rotate-45 z-0"></div>
+            <div class="pointer-events-none absolute -bottom-10 -right-8 w-40 h-40 rounded-full border-[14px] border-ticon-darkgreen/80 bg-ticon-green/70 z-0"></div>
 
-                <div class="lg:w-1/2 flex flex-col items-start space-y-2.5">
-                    <div class="bg-ticon-darkgreen text-white px-4 py-1 rounded-full text-xs lg:text-sm font-semibold inline-block">
+            <div class="container mx-auto px-6 py-10 lg:py-12 flex flex-col lg:flex-row items-center justify-between gap-10 relative z-10">
+
+                <!-- Columna izquierda: Texto -->
+                <div class="w-full lg:w-5/12 flex flex-col items-start space-y-4">
+                    <div class="bg-ticon-darkgreen text-white px-4 py-1 rounded-full text-xs sm:text-sm font-semibold inline-block">
                         Bienvenidos a la
                     </div>
 
-                    <h1 class="text-4xl lg:text-5xl font-black font-display leading-none text-ticon-base uppercase italic">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black font-display leading-none text-ticon-base uppercase italic">
                         XI Feria <br>
                         <span class="text-ticon-green">TIC-ON</span>
                     </h1>
 
-                    <div class="bg-ticon-green text-white px-4 py-1 rounded-full text-xs lg:text-sm font-bold uppercase tracking-wide">
+                    <div class="bg-ticon-green text-white px-4 py-1 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide">
                         Sembrando semillas de innovación
                     </div>
 
-                    <h2 class="text-base lg:text-lg font-bold text-ticon-base">
+                    <h2 class="text-base sm:text-lg font-bold text-ticon-base pt-1">
                         Tecnología • Educación • Sostenibilidad • Futuro
                     </h2>
 
-                    <p class="text-sm lg:text-base text-gray-600 max-w-md leading-snug">
+                    <p class="text-sm sm:text-base text-gray-700 max-w-md leading-relaxed">
                         Un espacio donde la innovación y la tecnología se unen para construir un mejor mañana.
                     </p>
 
-                    <div class="flex flex-wrap gap-3 pt-1">
-                        <a href="pagues/agenda.html" class="flex items-center gap-2 bg-ticon-darkgreen text-white px-5 py-2 rounded-full text-sm font-bold hover:bg-opacity-90 transition shadow-md">
+                    <div class="flex flex-wrap gap-3 pt-2">
+                        <a href="pagues/agenda.html" class="flex items-center gap-2 bg-ticon-darkgreen text-white px-6 py-2.5 rounded-full text-sm sm:text-base font-bold hover:bg-opacity-90 transition shadow-md">
                             <i class="ph ph-calendar-blank text-lg"></i>
                             Ver Agenda
                         </a>
-                        <a href="pagues/inscripciones.html" class="flex items-center gap-2 border-2 border-ticon-darkgreen text-ticon-darkgreen px-5 py-2 rounded-full text-sm font-bold hover:bg-ticon-darkgreen hover:text-white transition shadow-md bg-white">
+                        <a href="pagues/inscripciones.html" class="flex items-center gap-2 border-2 border-ticon-darkgreen text-ticon-darkgreen px-6 py-2.5 rounded-full text-sm sm:text-base font-bold hover:bg-ticon-darkgreen hover:text-white transition shadow-md bg-white">
                             <i class="ph ph-user-plus text-lg"></i>
                             Inscribirme
                         </a>
+                    </div>
+                </div>
+
+                <!-- Columna derecha: Icono Banner + Globo de mensaje -->
+                <div class="w-full lg:w-7/12 relative flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-4 sm:gap-2">
+                    <div class="pointer-events-none absolute w-72 h-72 sm:w-96 sm:h-96 bg-sky-300/40 rounded-full blur-2xl z-0"></div>
+
+                    <div class="relative z-10 flex items-center justify-center">
+                        <img src="./assets/banner-banner.svg" alt="Mascota oficial de la XI Feria TIC-ON" class="w-64 sm:w-80 lg:w-[360px] h-auto object-contain drop-shadow-xl">
+                    </div>
+
+                    <div class="hero-bubble relative z-20 px-6 py-5 sm:-ml-6 lg:-ml-8 mt-2 sm:mt-0 border border-white/80 transform sm:-rotate-3 text-center sm:text-left">
+                        <p class="font-display font-black italic text-ticon-darkgreen text-lg sm:text-xl lg:text-2xl leading-tight">
+                            Ideas<br>
+                            que germinan<br>
+                            un mejor<br>
+                            <span class="inline-flex items-center gap-1">
+                                futuro
+                                <span class="inline-block w-4 h-4 bg-ticon-green leaf-shape -rotate-12"></span>
+                            </span>
+                        </p>
+                        <div class="mt-1.5 h-1.5 w-24 bg-ticon-darkgreen rounded-full mx-auto sm:mx-0 transform -rotate-3"></div>
                     </div>
                 </div>
             </div>
@@ -177,50 +208,57 @@
                     </div>
                 </div>
 
-                <!-- Expositores -->
+                <!-- Aliados -->
                 <div class="lg:col-span-5 border-t lg:border-t-0 lg:border-l border-ticon-baselight pt-8 lg:pt-0 lg:pl-8">
                     <div class="flex justify-between items-start mb-6">
                         <div>
                             <h2 class="text-2xl font-display font-bold flex items-center gap-3">
                                 <i class="ph ph-users-three text-ticon-green"></i>
-                                Expositores e Innovación
+                                Aliados e Innovación
                             </h2>
                             <p class="text-sm text-gray-300 mt-2">Conoce a nuestros aliados, proyectos y <span class="border-b border-ticon-lightblue">propuestas</span> que están transformando el presente.</p>
                         </div>
                         <a href="pagues/expositores.html" class="bg-ticon-green text-ticon-base px-4 py-2 rounded-full font-bold text-sm whitespace-nowrap hover:bg-white transition flex items-center gap-1">
-                            Ver Expositores <i class="ph ph-arrow-right"></i>
+                            Ver Aliados <i class="ph ph-arrow-right"></i>
                         </a>
                     </div>
 
                     <div class="mt-8">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px]">
+                        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:scale-105 transition">
                                 <div class="h-16 flex items-center justify-center mb-2">
-                                    <i class="ph-fill ph-robot text-4xl text-ticon-lightblue"></i>
+                                    <img src="./assets/sena.svg" alt="SENA" class="max-h-14 w-auto object-contain">
                                 </div>
-                                <p class="font-black text-lg font-display">Robótica</p>
-                                <p class="text-xs leading-tight font-medium text-gray-500">Misiones autónomas</p>
+                                <p class="font-black text-sm font-display">SENA</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Formación e innovación</p>
                             </div>
-                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px] border-b-4 border-ticon-lightblue">
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:scale-105 transition">
                                 <div class="h-16 flex items-center justify-center mb-2">
-                                    <i class="ph-fill ph-drone text-4xl text-ticon-green"></i>
+                                    <img src="./assets/sennova.svg" alt="SENNOVA" class="max-h-14 w-auto object-contain">
                                 </div>
-                                <p class="font-black text-lg font-display">AgroPrecisión</p>
-                                <p class="text-xs leading-tight font-medium text-gray-500">Drones y sensores</p>
+                                <p class="font-black text-sm font-display">SENNOVA</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Investigación y desarrollo</p>
                             </div>
-                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px]">
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex flex-col items-center justify-center text-center shadow-sm hover:scale-105 transition">
                                 <div class="h-16 flex items-center justify-center mb-2">
-                                    <i class="ph-fill ph-lightning text-4xl text-ticon-base"></i>
+                                    <img src="./assets/Rafa.svg" alt="RAFA" class="max-h-14 w-auto object-contain">
                                 </div>
-                                <p class="font-black text-lg font-display">Energía</p>
-                                <p class="text-xs leading-tight font-medium text-gray-500">Limpias y renovables</p>
+                                <p class="font-black text-sm font-display">RAFA</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Aliado estratégico</p>
                             </div>
-                            <div class="bg-white text-ticon-base rounded-xl p-4 flex-1 text-center min-w-[200px]">
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex flex-col items-center justify-center text-center border-b-4 border-ticon-lightblue shadow-sm hover:scale-105 transition">
                                 <div class="h-16 flex items-center justify-center mb-2">
-                                    <i class="ph-fill ph-code text-4xl text-ticon-darkgreen"></i>
+                                    <img src="./assets/dji-agriculture.svg" alt="DJI Agriculture" class="max-h-14 w-auto object-contain">
                                 </div>
-                                <p class="font-black text-lg font-display">Software</p>
-                                <p class="text-xs leading-tight font-medium text-gray-500">Innovación digital</p>
+                                <p class="font-black text-sm font-display">DJI Agriculture</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Agricultura de precisión</p>
+                            </div>
+                            <div class="bg-white text-ticon-base rounded-xl p-4 flex flex-col items-center justify-center text-center col-span-2 sm:col-span-2 border-b-4 border-ticon-green shadow-sm hover:scale-105 transition">
+                                <div class="h-16 flex items-center justify-center mb-2">
+                                    <img src="./assets/cultivdwon.svg" alt="Cultivdron" class="max-h-14 w-auto object-contain">
+                                </div>
+                                <p class="font-black text-sm font-display">Cultivdron</p>
+                                <p class="text-xs leading-tight font-medium text-gray-500">Drones y tecnología agrícola</p>
                             </div>
                         </div>
                     </div>
