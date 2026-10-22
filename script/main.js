@@ -1,6 +1,21 @@
 import '../estilos/main.css'
+import { initializeApp } from 'firebase/app'
+import { getAnalytics } from 'firebase/analytics'
 import logoUrl from '../assets/imaginotipo-evento.svg'
 import mascotaUrl from '../assets/mascota-evento.svg'
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyCIdbrfs2nN_ua_X0rJT82iwTnWipHQ4-w',
+  authDomain: 'nova-ticon.firebaseapp.com',
+  projectId: 'nova-ticon',
+  storageBucket: 'nova-ticon.firebasestorage.app',
+  messagingSenderId: '919194102209',
+  appId: '1:919194102209:web:79145b74101d2a93e8e740',
+  measurementId: 'G-1GDR093ZG0',
+}
+
+export const app = initializeApp(firebaseConfig)
+export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null
 
 export const NAMESPACE = 'http://www.w3.org/2000/svg'
 
