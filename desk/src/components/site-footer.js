@@ -1,5 +1,5 @@
 import { el } from '../lib/dom.js'
-import mascotaUrl from '../../assets/mascota-evento.svg'
+import mascotaUrl from '../assets/imagenes/mascota-evento.svg'
 
 const SOCIALS = [
   { label: 'Facebook', icon: 'ph-fill ph-facebook-logo' },

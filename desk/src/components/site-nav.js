@@ -1,5 +1,5 @@
 import { el } from '../lib/dom.js'
-import logoUrl from '../../assets/imaginotipo-evento.svg'
+import logoUrl from '../assets/imagenes/imaginotipo-evento.svg'
 
 const LINKS = [
   { page: 'inicio', label: 'Inicio', href: 'index.html' },
