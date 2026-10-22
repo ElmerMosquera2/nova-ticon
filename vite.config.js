@@ -2,8 +2,7 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 import tailwindcss from '@tailwindcss/vite'
 
-const pages = [
-  'index',
+const subpages = [
   'nosotros',
   'proyectos',
   'expositores',
@@ -17,9 +16,15 @@ export default defineConfig({
   plugins: [tailwindcss()],
   build: {
     rollupOptions: {
-      input: Object.fromEntries(
-        pages.map((name) => [name, resolve(import.meta.dirname, `${name}.html`)]),
-      ),
+      input: {
+        index: resolve(import.meta.dirname, 'index.html'),
+        ...Object.fromEntries(
+          subpages.map((name) => [
+            name,
+            resolve(import.meta.dirname, `pagues/${name}.html`),
+          ]),
+        ),
+      },
     },
   },
 })
